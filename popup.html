@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Fullscreen Notch</title>
+    <style>
+      body {
+        width: 250px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+        background-color: #f8f8f8;
+      }
+      #inject {
+        padding: 10px;
+        background-color: #0078D7;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      #inject:hover {
+        background-color: #005a9e;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Fullscreen Notch</h3>
+    <p>Click to inject the animated notch into the current page.</p>
+    <button id="inject">Inject Notch</button>
+    <script src="popup.js"></script>
+  </body>
+</html>

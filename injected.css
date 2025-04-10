@@ -1,0 +1,63 @@
+/* Define a slide-in animation */
+@keyframes slidein {
+    from {
+      transform: translateX(100%) translateY(-50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0) translateY(-50%);
+      opacity: 1;
+    }
+  }
+  
+  #fullscreen-notch {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    /* Initially, only translate vertically; the animation will bring it in horizontally */
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #0078D7; /* Blue for windowed mode */
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10000;
+    opacity: 0.8;
+    transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+    animation: slidein 0.5s ease-out;
+  }
+  
+  #fullscreen-notch:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+  }
+  
+  /* When in fullscreen mode, change background to black */
+  #fullscreen-notch.fullscreen {
+    background-color: #000;
+  }
+  
+  #fullscreen-notch span {
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s;
+  }
+  
+  /* Give a subtle "press" effect when clicking the notch */
+  #fullscreen-notch:active span {
+    transform: scale(0.9);
+  }
+  
+  @media (max-width: 480px) {
+    #fullscreen-notch {
+      width: 40px;
+      height: 40px;
+    }
+    #fullscreen-notch span {
+      font-size: 20px;
+    }
+  }
+  
